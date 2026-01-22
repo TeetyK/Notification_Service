@@ -11,7 +11,7 @@ public class HelloController {
     }
     
     @GetMapping("/test")
-    public String hello() {
+    public String sayhello() {
         return "TEST";
     }
     
