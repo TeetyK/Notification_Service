@@ -1,17 +1,8 @@
 package com.api.notification.dto;
 
 public class EmailRequest {
-    private String to;
     private String subject;
     private String body;
-
-    public String getTo() {
-        return to;
-    }
-
-    public void setTo(String to) {
-        this.to = to;
-    }
 
     public String getSubject() {
         return subject;

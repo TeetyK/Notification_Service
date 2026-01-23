@@ -5,7 +5,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest(properties = {
     "MAIL_HOST=smtp.gmail.com",
 	"MAIL_PORT=587",
-	"MAIL_USER=phunyapat.p@gmail.com",
+	"MAIL_USER=test@gmail.com",
 	"MAIL_PW=test",
 	"POSTGRE_URL = jdbc:postgresql://localhost:5432/postgres",
 	"POSTGRE_USER = postgres",

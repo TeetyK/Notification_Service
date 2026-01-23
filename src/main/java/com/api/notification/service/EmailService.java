@@ -1,6 +1,7 @@
 package com.api.notification.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
@@ -11,10 +12,17 @@ public class EmailService {
     @Autowired
     private JavaMailSender mailSender;
 
-    public void sendEmail(String to, String subject, String body) {
+    @Value("${MAIL_USER}")
+    private String fromEmail;
+
+    @Value("${MAIL_TEST}")
+    private String toEmail;
+
+
+    public void sendEmail(String subject, String body) {
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("from-email@example.com");
-        message.setTo(to);
+        message.setFrom(fromEmail);
+        message.setTo(toEmail);
         message.setSubject(subject);
         message.setText(body);
         mailSender.send(message);
