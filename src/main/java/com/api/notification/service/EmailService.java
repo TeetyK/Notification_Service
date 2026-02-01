@@ -15,14 +15,10 @@ public class EmailService {
     @Value("${MAIL_USER}")
     private String fromEmail;
 
-    @Value("${MAIL_TEST}")
-    private String toEmail;
-
-
-    public void sendEmail(String subject, String body) {
+    public void sendEmail(String to, String subject, String body) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom(fromEmail);
-        message.setTo(toEmail);
+        message.setTo(to);
         message.setSubject(subject);
         message.setText(body);
         mailSender.send(message);
